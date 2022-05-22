@@ -1,0 +1,17 @@
+/* navbar */
+.navbar .navbar-brand {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: green;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: blue;
+}
+
+/* jumbotron */
+.jumbotron{
+    background-size: cover;
+    height: 650px;
+}
