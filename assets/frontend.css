@@ -1,17 +1,114 @@
 /* navbar */
+.navbar {
+    background-color: transparent;
+}
+
 .navbar .navbar-brand {
     font-weight: 800;
     text-transform: uppercase;
     font-size: 1.5em;
-    color: green;
+    color: #EB984E;
+    margin-left: 50px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: blue;
+    color: #f7f4f2;
 }
 
 /* jumbotron */
-.jumbotron{
+.jumbotron {
     background-size: cover;
-    height: 650px;
+    height: 950px;
+    margin-top: -225px;
 }
+
+.jumbotron .display-4 {
+    font-size: 50px;
+    color: white;
+}
+
+.jumbotron h2 {
+    font-weight: 300;
+    font-size: 40px;
+    text-transform: capitalize;
+    color: white;
+}
+
+.jumbotron h4 {
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.jumbotron .jb {
+    margin-top: 250px;
+}
+
+.carousel {
+    width: 15rem;
+}
+/* @media (min-width: 992px) {
+    
+    .navbar {
+        padding: 10px 0;
+        background-color: transparent;
+    }
+
+    .navbar .navbar-brand {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        color: green;
+        margin-left: 50px;
+    }
+
+    .navbar .nav-item {
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-right: 50px;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.7);
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: blue;
+        padding: 10px 25px;
+    }
+
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 3px solid #D35400;
+        width: 50%;
+        margin: auto;
+        margin-top: -13px;
+    }
+
+    .jumbotron{
+        background-size: cover;
+        height: 950px;
+        margin-top: -225px;
+    }
+
+    .jumbotron .display-4 {
+        font-size: 50px;
+    }
+
+    .jumbotron h2 {
+        font-weight: 300;
+        font-size: 40px;
+        text-transform: capitalize;
+        color: white;
+    }
+
+    .jumbotron h4 {
+        font-weight: 300;
+        font-size: 15px;
+    }
+
+    .jumbotron .jb {
+        margin-top: 300px;
+    }
+
+    .carousel{
+        width: 18rem;
+    }
+} */
