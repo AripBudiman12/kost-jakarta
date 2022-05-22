@@ -16,5 +16,7 @@
   <link rel="stylesheet" href="assets/lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/lte/dist/css/adminlte.min.css">
+  <!-- css -->
+  <link rel="stylesheet" href="assets/frontend.css">
 </head>
 <body>
