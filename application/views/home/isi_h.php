@@ -73,12 +73,12 @@
         <h1 style="text-align:center">Rekomendasi <b>KOST</b></h1>
         <hr>
         <div class="row justify-content-center">
-            <?php foreach ($datakost as $kost); ?>
+            <!-- <?php foreach ($datakost as $kost); ?> -->
             <div class="col-md-4">
                 <div class="card shadow mb-5">
-                    <div class="inner mx-auto">
+                    <!-- <div class="inner mx-auto">
                         <a href="<?= $kost->detail ?>"><img src="<?= $kost-> gambar ?>" class="card-img-top" alt=""></a>
-                    </div>
+                    </div> -->
                     <div class="card-body">
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <h5 class="card-title">Special title treatment</h5>

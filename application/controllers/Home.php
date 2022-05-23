@@ -12,6 +12,7 @@ class Home extends CI_Controller {
     public function index()
     
     {
+
         // load view
         $this->load->view('Home/header_h');
         $this->load->view('Home/isi_h');
