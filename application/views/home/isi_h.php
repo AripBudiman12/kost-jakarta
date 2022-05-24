@@ -90,4 +90,14 @@
             </div>
         </div>
     </div>
-</div>   
+</div>
+
+<div class="komentar">
+    <div class="container">
+        <h1>Form Buku Tamu</h1>
+        <hr>
+        <div class="row">
+            
+        </div>
+    </div>
+</div>

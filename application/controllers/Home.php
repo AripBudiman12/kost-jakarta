@@ -18,4 +18,23 @@ class Home extends CI_Controller {
         $this->load->view('Home/isi_h');
         $this->load->view('Home/footer_h');
     }
+
+    public function tambah_form(){
+
+        $nama       =   $this->input->post('nama');
+        $email      =   $this->input->post('email');
+        $penilaian  =   $this->input->post('penilaian');
+        $komentar   =   $this->input->post('komentar');
+
+        $data   =   array(
+
+            'nama'      =>  $nama,
+            'email'     =>  $email,
+            'penilaian' =>  $penilaian,
+            'komentar'  =>  $komentar
+        );
+
+        $this->home_model->input_data($data, 'buku-tamu');
+        redirect('home/index');
+    }
 }
