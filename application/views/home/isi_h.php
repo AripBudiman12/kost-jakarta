@@ -97,7 +97,15 @@
         <h1>Form Buku Tamu</h1>
         <hr>
         <div class="row">
-            
+            <div class="col-md-8">
+                <form action="<?= base_url().'Home/tambah_form'; ?>" id="form_tambah" method="post">
+                    <div class="form-group">
+                        <label for=""><b>Nama</b></label>
+                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama" required>
+                    </div>
+                    
+                </form>
+            </div>
         </div>
     </div>
 </div>
