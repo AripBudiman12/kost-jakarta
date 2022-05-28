@@ -97,13 +97,32 @@
         <h1>Form Buku Tamu</h1>
         <hr>
         <div class="row">
+            <div class="col-md-2"></div>
             <div class="col-md-8">
                 <form action="<?= base_url().'Home/tambah_form'; ?>" id="form_tambah" method="post">
                     <div class="form-group">
                         <label for=""><b>Nama</b></label>
                         <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama" required>
                     </div>
-                    
+                    <div class="form-group">
+                        <label for=""><b>Email</b></label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="nama@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for=""><b>Penilaian</b></label>
+                        <select class="form-control" name="penilaian" id="penilaian" required>
+                            <option value="">-PILIH-</option>
+                            <option value="bagus">BAGUS</option>
+                            <option value="sangat bagus">SANGAT BAGUS</option>
+                            <option value="cukup bagus">CUKUP BAGUS</option>
+                            <option value="biasa aja">BIASA AJA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"><b>Komentar</b></label>
+                        <textarea class="form-control" name="komentar" id="komentar" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" id="tambah" class="btn btn-info">Simpan</button>
                 </form>
             </div>
         </div>
