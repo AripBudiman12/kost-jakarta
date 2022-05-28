@@ -5,9 +5,9 @@ class Autentifikasi extends CI_Controller
     public function index() {
         // jika statusnya sudah login, maka tidak bisa mengakses
         // halaman login alias dikembalikan ke tampilan home
-        if($this->session->userdata('email')){
-            redirect('admin');
-        }
+        // if($this->session->userdata('email')){
+        //     redirect('admin');
+        // }
 
         $this->form_validation->set_rules('email', 'Alamat Email', 
         'required|trim|valid_email', [
@@ -21,11 +21,11 @@ class Autentifikasi extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Login';
             $data['user'] = '';
-            // kata 'login' merupakan nilai dari variable judul datlam
+            // kata 'login' merupakan nilai dari variable judul dalam
             // array $data dikirimkan ke view aute_header
             $this->load->view('templates/aute_header', $data);
             $this->load->view('autentifikasi/login');
-            $this->load->view('temolates/aute_footer');
+            $this->load->view('templates/aute_footer');
         } else {
             $this->_login();
         }
@@ -46,7 +46,7 @@ class Autentifikasi extends CI_Controller
                 if (password_verify($password, $user['password'])) {
                     $data = [
                         'email' => $user['email'],
-                        'role_id' => $user[role_id]
+                        'role_id' => $user['role_id']
                     ];
 
                     $this->session->set_userdata($data);
@@ -67,9 +67,9 @@ class Autentifikasi extends CI_Controller
 
     public function registrasi()
     {
-            if ($this->session->userdata('email')) {
-                redirect('user');
-            }
+            // if ($this->session->userdata('email')) {
+            //     redirect('user');
+            // }
         // membuat rule untuk inputan nama agar tidak boleh kosong
         // dengan membuat pesan error dengan bahasa sendiri yaitu 'Nama belum diisi'
         $this->form_validation->set_rules('nama', 'Nama Lengkap', 
@@ -99,9 +99,9 @@ class Autentifikasi extends CI_Controller
         // diinputkan akan disimpan ke dalam tabel user
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Registrasi Member';
-            $this->load->view('home/header_h', $data);
+            $this->load->view('templates/aute_header', $data);
             $this->load->view('autentifikasi/registrasi');
-            $this->load->view('home/footer_h');
+            $this->load->view('templates/aute_footer');
         } else {
             $email = $this->input->post('email', true);
             $data = [

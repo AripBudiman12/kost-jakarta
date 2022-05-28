@@ -13,10 +13,10 @@
                         <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Buku-Tamu</a>
+                        <a class="nav-link" href="<?= base_url('Buku_Tamu'); ?>">Buku-Tamu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log-in</a>
+                        <a class="nav-link" href="<?= base_url('Autentifikasi'); ?>">Log-in</a>
                     </li>
                 </ul>
             </div>
