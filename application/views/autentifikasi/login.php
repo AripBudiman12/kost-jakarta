@@ -4,13 +4,17 @@
 
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="assets/lte/index2.html" class="h1"><b>Admin</b>LTE</a>
+                <a href="<?= base_url('home') ?>" class="h1"><b>Kost-</b>JAKARTA</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-                <form action="asstes/lte/index3.html" method="post">
+                <?= $this->session->flashdata('pesan'); ?>
+                <form action="<?= base_url('autentifikasi') ?>" method="post">
                     <div class="input-group mb-3">
-                      <input type="email" class="form-control" placeholder="Email">
+                      <input type="email" class="form-control" 
+                      value="<?= set_value('email'); ?>" id="email" 
+                      placeholder="Masukkan Alamat Email" name="email">
+                        <?= form_error('email', '<small class="text-danger p1-3">', '</small>'); ?>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -18,7 +22,10 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                      <input type="password" class="form-control" placeholder="Password">
+                      <input type="password" 
+                      class="form-control" placeholder="Password" 
+                      id="password" name="password">
+                        <?= form_error('password', '<small class="text-danger p1-3">', '</small>'); ?>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

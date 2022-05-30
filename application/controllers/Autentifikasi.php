@@ -5,9 +5,9 @@ class Autentifikasi extends CI_Controller
     public function index() {
         // jika statusnya sudah login, maka tidak bisa mengakses
         // halaman login alias dikembalikan ke tampilan home
-        // if($this->session->userdata('email')){
-        //     redirect('admin');
-        // }
+        if($this->session->userdata('email')){
+            redirect('admin');
+        }
 
         $this->form_validation->set_rules('email', 'Alamat Email', 
         'required|trim|valid_email', [
@@ -67,9 +67,9 @@ class Autentifikasi extends CI_Controller
 
     public function registrasi()
     {
-            // if ($this->session->userdata('email')) {
-            //     redirect('user');
-            // }
+            if ($this->session->userdata('email')) {
+                redirect('user');
+            }
         // membuat rule untuk inputan nama agar tidak boleh kosong
         // dengan membuat pesan error dengan bahasa sendiri yaitu 'Nama belum diisi'
         $this->form_validation->set_rules('nama', 'Nama Lengkap', 
