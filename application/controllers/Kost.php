@@ -21,6 +21,31 @@ class Kost extends CI_Controller
             'required' => 'Lokasi Harus Diisi',
             'min_length' => 'Lokasi terlalu pendek'
         ]);
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|min_length[3]',[
+            'required' => 'Alamat Harus Diisi',
+            'min_length' => 'Alamat terlalu pendek'
+        ]);
+        $this->form_validation->set_rules('subalamat', 'SubAlamat', 'required|min_length[3]',[
+            'required' => 'SubAlamat Harus diisi',
+            'min_length' => 'SubAlamat Terlalu Pendek'
+        ]);
+        $this->form_validation->set_rules('harga', 'Harga', 'required|min_length[3]numeric',[
+            'required' => 'Harga harus diisi',
+            'min_length' => 'Harga Terlalu Pendek',
+            'numeric' => 'Yang anda masukkan bukan angka'
+        ]);
+
+        //konfogurasi sebelum gambar diupload
+
+        $config['upload_path'] = './assets/img/kost';
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '3000';
+        $config['max_width'] = '1024';
+        $config['max_height'] = '1000';
+        $config['file_name'] = 'img' . time();
+
+        $this->load->library('upload', $config);
+
         
 
     }
