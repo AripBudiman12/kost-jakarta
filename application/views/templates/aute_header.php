@@ -12,3 +12,4 @@
 <link rel="stylesheet" href="assets/lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 
 <link rel="stylesheet" href="assets/lte/dist/css/adminlte.min.css?v=3.2.0">
+</head>
