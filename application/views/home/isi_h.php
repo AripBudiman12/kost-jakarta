@@ -30,13 +30,13 @@
         <div id="carouselExampleInterval" class="carousel slide mx-auto" data-ride="carousel" >
                   <div class="carousel-inner" >
                       <div class="carousel-item active" >
-                      <img src="<?php echo base_url() ?>assets/image/iklan/iklan.jpg" class="d-block w-100" alt="...">
+                      <img src="<?php echo base_url() ?>assets/img/iklan/iklan.jpg" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item" >
-                      <img src="<?php echo base_url() ?>assets/image/iklan/iklan2.png" class="d-block w-100" alt="...">
+                      <img src="<?php echo base_url() ?>assets/img/iklan/iklan2.png" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                      <img src="<?php echo base_url() ?>assets/image/iklan/iklan3.jpg" class="d-block w-100" alt="...">
+                      <img src="<?php echo base_url() ?>assets/img/iklan/iklan3.jpg" class="d-block w-100" alt="...">
                       </div>
                   </div>
                </div>
