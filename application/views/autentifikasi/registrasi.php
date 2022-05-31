@@ -3,37 +3,45 @@
 <div class="register-box">
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="assets/lte/index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="<?= base_url('home') ?>" class="h1"><b>Kost</b>JAKARTA</a>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Register a new membership</p>
-            <form action="../../index.html" method="post">
+            <form action="<?php base_url('autentifikasi/registrasi') ?>" method="post">
+                <!-- nama -->
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Full name">
+                  <input type="text" class="form-control" placeholder="Full name" id="nama" 
+                  name="nama" value="<?= set_value('nama'); ?>" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-user"></span>
                         </div>
                     </div>
                 </div>
+                <!-- email -->
                 <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email">
+                  <input type="email" class="form-control" placeholder="Email" id="email" 
+                  name="email" value="<?= set_value('email') ?>" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                           <span class="fas fa-envelope"></span>
                         </div>
                     </div>
                 </div>
+                <!-- password -->
                 <div class="input-group mb-3">
-                  <input type="password" class="form-control" placeholder="Password">
+                  <input type="password" class="form-control" placeholder="Password" id="password1" 
+                  name="password1" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                           <span class="fas fa-lock"></span>
                         </div>
                     </div>
                 </div>
+                <!-- ulang password -->
                 <div class="input-group mb-3">
-                  <input type="password" class="form-control" placeholder="Retype password">
+                  <input type="password" class="form-control" placeholder="Retype password" id="password2" 
+                  name="password2" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                           <span class="fas fa-lock"></span>
