@@ -46,7 +46,38 @@ class Kost extends CI_Controller
 
         $this->load->library('upload', $config);
 
-        
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('kost/index', $data);
+            $this->load->view('templates/footer');
+        } else {
+            if ($this->upload->do_upload('image')) {
+                $image = $this->upload->data();
+                $gambar = $image['file_name'];
+            } else {
+                $gambar = '';
+            }
 
+            $data = [
+                'lokasi' => $this->input->post('lokasi', true),
+                'alamat' => $this->input->post('alamat', true),
+                'subalamat' => $this->input->post('subalamat', true),
+                'harga' => $this->input->post('harga', true),
+                'image' => $gambar
+            ];
+
+            $this->ModelKost->simpanKost($data);
+            redirect('kost');
+        }
     }
+
+    public function hapusKost()
+    {
+        $where = ['id' => $this->uri->segment(3)];
+        $this->ModelKost->hapusKost($where);
+        redirect('kost');
+    }
+
 }
