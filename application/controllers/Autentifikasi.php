@@ -56,8 +56,8 @@ class Autentifikasi extends CI_Controller
                     redirect('home');
                 }
             } else {
-                $this->session->set_flash_data('pesan', '<div class="alert alert-danger alert-message" role="alert">User Belum diaktifasi!!!</div>');
-                redirect('home');
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">User Belum diaktifasi!!!</div>');
+                redirect('autentifikasi');
             }
         } else {
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Email tidak terdaftar!!</div>');
