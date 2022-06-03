@@ -6,16 +6,26 @@ class Home extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        //cek_login();
+        $this->load->library('pagination');
     }
+       
+ 
+    public function index(){
+        
+        // load pagination
+		$this->load->library('pagination_bootstrap');
+		// load database
+		$this->db->limit(23);
+		$sql = $this->db->get('data_kost');
 
-    public function index()
-    
-    {
+		// set numbuer per page
+		$this->pagination_bootstrap->offset(6);
 
+		$data['kost'] = $this->pagination_bootstrap->config("/Home/index", $sql);
+        $data['judul'] = 'Home';
         // load view
-        $this->load->view('Home/header_h');
-        $this->load->view('Home/isi_h');
+        $this->load->view('Home/header_h', $data);
+        $this->load->view('Home/isi_h', $data);
         $this->load->view('Home/footer_h');
     }
 

@@ -7,6 +7,6 @@ class Home_model extends CI_Model {
     }
 
     public function tampil_search() {
-        return $this->db->get('data-kost')->result_array();
+        return $this->db->get('data_kost')->result_array();
     }
 }

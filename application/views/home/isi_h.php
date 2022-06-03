@@ -73,22 +73,28 @@
         <h1 style="text-align:center">Rekomendasi <b>KOST</b></h1>
         <hr>
         <div class="row justify-content-center">
-            <!-- <?php foreach ($datakost as $kost); ?> -->
+            <?php foreach ($kost as $k): ?>
             <div class="col-md-4">
                 <div class="card shadow mb-5">
                     <!-- <div class="inner mx-auto">
                         <a href="<?= $kost->detail ?>"><img src="<?= $kost-> gambar ?>" class="card-img-top" alt=""></a>
                     </div> -->
                     <div class="card-body">
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <h5 class="card-title">Special title treatment</h5>
-                        <span class="card-font"></span>
-                        <p class="card-text"></p>
+                        <p class="card-text"><?= $k-> lokasi; ?></p>
+                        <h5 class="card-title"><?= substr($k-> alamat,0,23)?>...</h5><br>
+                        <h5 class="card-font" style="color: green;"><?= $k->harga ?></h5>
+                        <p class="card-text"><?= substr($k-> subalamat,0,30)?>...</p>
                         <a href="#" class="btn btn-primary">Lihat Detail</a>
                     </div>
                 </div>
             </div>
+            <?php endforeach; ?>
         </div>
+        <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                        <?= $this->pagination_bootstrap->render()?>
+                        </div>
+                    </div>
     </div>
 </div>
 

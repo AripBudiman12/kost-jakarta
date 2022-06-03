@@ -6,26 +6,26 @@ class ModelKost extends CI_Model
     //manajemen kost
     public function getKost()
     {
-        return $this->db->get('data-kost');
+        return $this->db->get('data_kost');
     }
 
     public function kostWhere($where)
     {
-        return $this->db->get_where('data-kost', $where);
+        return $this->db->get_where('data_kost', $where);
     }
 
     public function simpanKost($data = null)
     {
-        $this->db->insert('data-kost', $data);
+        $this->db->insert('data_kost', $data);
     }
 
     public function updateKost($data = null, $where = null)
     {
-        $this->db->update('data-kost', $data, $where);
+        $this->db->update('data_kost', $data, $where);
     }
 
     public function hapusKost($where = null)
     {
-        $this->db->delete('data-kost', $where);
+        $this->db->delete('data_kost', $where);
     }
 }

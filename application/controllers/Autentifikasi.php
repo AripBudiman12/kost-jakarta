@@ -105,6 +105,7 @@ class Autentifikasi extends CI_Controller
         } else {
             $email = $this->input->post('email', true);
             $data = [
+                'user_name' => htmlspecialchars($this->input->post('user_name', true)),
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($email),
                 'image' => 'default.jpg',

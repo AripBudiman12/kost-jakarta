@@ -8,6 +8,16 @@
         <div class="card-body">
             <p class="login-box-msg">Register a new membership</p>
             <form action="<?php base_url('autentifikasi/registrasi') ?>" method="post">
+                <!-- user_name -->
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Nama Panggilan" id="user_name" 
+                  name="user_name" value="<?= set_value('user_name'); ?>" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                </div>
                 <!-- nama -->
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Full name" id="nama" 
