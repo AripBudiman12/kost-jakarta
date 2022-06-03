@@ -84,7 +84,7 @@
                         <h5 class="card-title"><?= substr($k-> alamat,0,23)?>...</h5><br>
                         <h5 class="card-font" style="color: green;"><?= $k->harga ?></h5>
                         <p class="card-text"><?= substr($k-> subalamat,0,30)?>...</p>
-                        <a href="#" class="btn btn-primary">Lihat Detail</a>
+                        <a href="Autentifikasi" class="btn btn-primary">Lihat Detail</a>
                     </div>
                 </div>
             </div>
