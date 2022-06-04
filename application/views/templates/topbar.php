@@ -47,17 +47,18 @@
           <!-- Sidebar user panel (optional) -->
             <ul class="image">
               <li style="list-style:none;"><span href="#" class="d-block-link active"><?= $user['user_name'] ?></span>
-              <img src="<?= base_url('assets/img/user'); ?>" class="brand-image img-circle elevation-3" width="60" height="35"></li>
+              <img src="<?= base_url ('assets/img/user/') . $user['image']; ?>" class="brand-image elevation-3" width="60" height="35"></li>
             </ul>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg">
           <!-- User Image -->
           <center>
           <li class="user-header">
-            <img src="<?= base_url('assets/img/user'); ?>" class="img circle" alt="User Image">
-            <p>
+            <br>
+            <img class="img-profile" width="250" height="160" src="<?= base_url ('assets/img/user/') . $user['image']; ?>">
+            <p><br>
             <?= $user['nama'] ?> - Admin Kost <br>
-              <small>Member since Mei. 2022</small>
+              <small>Member since <?= date('d F Y', $user['tanggal_input']); ?></small>
             </p>
           </li>
           </center>

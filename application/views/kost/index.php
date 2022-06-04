@@ -34,12 +34,18 @@
                             <td><?= $k['id']; ?></td>
                             <td><?= $k['lokasi']; ?></td>
                             <td><?= $k['alamat']; ?></td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>U</td>
+                            <td><?= $k['subalamat']; ?></td>
+                            <td><?= $k['harga']; ?></td>
+                            <td><picture>
+                                <source srcset=""
+                                type="image/svg+xml">
+                                <img src="<?=
+                                base_url('assets/img/kost/') . $k['image'];?>" class="img-fluid 
+                                img-thumbnail" alt="...">
+                            </picture></td>
                             <td>
-                            <a style="align: left;" href="<?= base_url('') ?>" class="btn btn-info btn-flat">Ubah</a>
-                            <a style="float: right;" href="<?= base_url('') ?>" class="btn btn-info btn-flat">Hapus</a>
+                            <a href="<?= base_url('') ?>" class="badge badge-info"><i class="fas fa-edit"></i>Ubah</a>
+                            <a href="<?= base_url('') ?>" class="badge badge-danger"><i class="fas fa-trash"></i>Hapus</a>
                             </td>
                         </tr>
                     <?php } ?>

@@ -28,8 +28,7 @@
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example1').DataTable({
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)').DataTablee({
       "paging": true,
       "lengthChange": false,
       "searching": false,
