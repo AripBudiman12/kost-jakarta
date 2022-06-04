@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="<?= base_url('assets/lte/'); ?>plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('assets/lte/'); ?>dist/css/adminlte.min.css">
+  <!-- table -->
+  <link rel="stylesheet" href="<?= base_url('assets/lte/'); ?>plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url('assets/lte/'); ?>plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url('assets/lte/'); ?>plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">

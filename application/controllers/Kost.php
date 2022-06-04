@@ -14,7 +14,7 @@ class Kost extends CI_Controller
     {
         $data['judul'] = 'Data Kost';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $data['data-kost'] = $this->ModelKost->getKost()->result_array();
+        $data['kost'] = $this->ModelKost->getKost()->result_array();
 
         $this->form_validation->set_rules('lokasi', 'Lokasi', 'required|min_length[3]',[
             'required' => 'Lokasi Harus Diisi',

@@ -45,14 +45,7 @@
             onclick="window.history.go(-1)"> Kembali</button>
         </div>
     </div>
-
-    </form>
-  </div>
+<!-- Content Fluid -->
 </div>
-
-</div>
-<!-- /.container-fluid -->
-
-</div>
-<!-- End of Main Content -->
+<!-- Content Wrapper -->
 </div>
