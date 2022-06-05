@@ -21,12 +21,13 @@ class Home extends CI_Controller {
 		// set numbuer per page
 		$this->pagination_bootstrap->offset(6);
 
+        $data['kost'] = $this->ModelKost->getKost()->result_array();
 		$data['kost'] = $this->pagination_bootstrap->config("/Home/index", $sql);
         $data['judul'] = 'Home';
         // load view
         $this->load->view('Home/header_h', $data);
         $this->load->view('Home/isi_h', $data);
-        $this->load->view('Home/footer_h');
+        $this->load->view('Home/footer_h', $data);
     }
 
     public function tambah_form(){

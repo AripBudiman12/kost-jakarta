@@ -76,9 +76,9 @@
             <?php foreach ($kost as $k): ?>
             <div class="col-md-4">
                 <div class="card shadow mb-5">
-                    <!-- <div class="inner mx-auto">
-                        <a href="<?= $kost->detail ?>"><img src="<?= $kost-> gambar ?>" class="card-img-top" alt=""></a>
-                    </div> -->
+                    <div class="inner mx-auto">
+                        <a href="Autentifikasi"><img src="<?= base_url('assets/img/kost/') . $k->image ?>" class="card-img-top" alt="..."></a>
+                    </div>
                     <div class="card-body">
                         <p class="card-text"><?= $k-> lokasi; ?></p>
                         <h5 class="card-title"><?= substr($k-> alamat,0,23)?>...</h5><br>
