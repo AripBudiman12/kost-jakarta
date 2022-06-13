@@ -28,15 +28,4 @@ class ModelKost extends CI_Model
     {
         $this->db->delete('data_kost', $where);
     }
-
-    //search
-    public function get_search($keyword){
-        $this->db->select('*');
-        $this->db->like('lokasi', $keyword);
-        $this->db->or_like('alamat', $keyword);
-        $this->db->or_like('subalamat', $keyword);
-        $this->db->or_like('harga', $keyword);
-
-        return $this->db->get('data_kost')->result();
-    }
 }

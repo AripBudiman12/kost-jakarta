@@ -23,23 +23,25 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>NAMA</th>
-                        <th>EMAIL</th>
-                        <th>PENILAIAN</th>
-                        <th>KOMENTAR</th>
+                        <th scope="col">#</th>
+                        <th scope="col">NAMA</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">PENILAIAN</th>
+                        <th scope="col">KOMENTAR</th>
                     </tr>
                 </thead>
                 <tbody>
+                  <?php
+                  $a = 1;
+                  foreach ($buku_tamu as $b) { ?>
                     <tr>
-                        <td>Trident</td>
-                        <td>Internet
-                        Explorer 4.0
-                        </td>
-                        <td>Win 95+</td>
-                        <td> 4</td>
-                        <td>X</td>
+                        <th scope="row"><?= $a++; ?></th>
+                        <td><?= $b['nama']; ?></td>
+                        <td><?= $b['email']; ?></td>
+                        <td><?= $b['penilaian']; ?></td>
+                        <td><?= $b['komentar']; ?></td>
                     </tr>
+                  <?php } ?>
                 </tbody>
             </table>
         </div>
