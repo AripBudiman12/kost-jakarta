@@ -30,6 +30,17 @@ class Home extends CI_Controller {
         $this->load->view('Home/footer_h', $data);
     }
 
+    public function search_data(){
+        $keyword = $this->input->post('yangdicari',true);
+        
+        $data['kost'] = $this->ModelKost->get_search($keyword);
+        $data['judul'] = 'Search';
+        //load view
+        $this->load->view('Home/header_h', $data);
+        $this->load->view('hasil_search', $data);
+        $this->load->view('Home/footer_h', $data);
+    }
+
     public function tambah_form(){
 
         $nama       =   $this->input->post('nama');
@@ -45,7 +56,7 @@ class Home extends CI_Controller {
             'komentar'  =>  $komentar
         );
 
-        $this->home_model->input_data($data, 'buku-tamu');
+        $this->home_model->input_data($data, 'buku_tamu');
         redirect('home/index');
     }
 }
