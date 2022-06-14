@@ -44,8 +44,8 @@
                                 img-thumbnail" alt="...">
                             </picture></td>
                             <td>
-                            <a href="<?= base_url('') ?>" class="badge badge-info"><i class="fas fa-edit"></i>Ubah</a>
-                            <a href="<?= base_url('') ?>" class="badge badge-danger"><i class="fas fa-trash"></i>Hapus</a>
+                             <a href="<?= base_url('kost/ubahkost/') . $k['id']; ?>" onclick="return confirm('Kamu yakin akan mengubah <?= $k['alamat']; ?> ?');" class="badge badge-info"><i class="fas fa-edit"></i>Ubah</a>
+                                <a href="<?= base_url('kost/hapuskost/') . $k['id']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $k['alamat']; ?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i>Hapus</a>
                             </td>
                         </tr>
                     <?php } ?>
