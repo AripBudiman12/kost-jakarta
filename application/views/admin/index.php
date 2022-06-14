@@ -85,7 +85,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Daftar User</h3>
-                                    <div class="card-tools">                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <div class="card-tools">                                        
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>
                                     </button>
                                     <button type="button" class="btn btn-tool" data-card-widget="remove">
@@ -98,23 +99,28 @@
                                 <ul class="users-list clearfix">
                                     <li>
                                         <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Alexander Pierce</a>
-                                        <span class="users-list-date">Today</span>
+                                        <a class="users-list-name" href="#">Dwi Nurmala sari</a>
+                                        <span class="users-list-date">14-06-2022</span>
                                     </li>
                                     <li>
                                         <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Norman</a>
-                                        <span class="users-list-date">Yesterday</span>
+                                        <a class="users-list-name" href="#">Muhammad Abizar</a>
+                                        <span class="users-list-date">14-06-2022</span>
                                     </li>
                                     <li>
                                         <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Jane</a>
-                                        <span class="users-list-date">12 Jan</span>
+                                        <a class="users-list-name" href="#">Teguh Ramdhani</a>
+                                        <span class="users-list-date">14-06-2022</span>
                                     </li>
                                     <li>
                                         <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Jane</a>
-                                        <span class="users-list-date">12 Jan</span>
+                                        <a class="users-list-name" href="#">Latifah Ningrum</a>
+                                        <span class="users-list-date">14-06-2022</span>
+                                    </li>
+                                    <li>
+                                        <img src="dist/img/user7-128x128.jpg" alt="User Image">
+                                        <a class="users-list-name" href="#">Arip Budiman</a>
+                                        <span class="users-list-date">14-06-2022</span>
                                     </li>
                                 </ul>
                                 <!-- /.users-list -->
@@ -150,26 +156,26 @@
                                 <!-- item -->
                                 <li class="item">
                                     <div class="product-img">
-                                        <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                        <img src="<?php echo base_url() ?>assets/img/kost/jakbar1.jpg" alt="Product Image" class="img-size-50">
                                     </div>
                                     <div class="product-info">
-                                        <a href="javascript:void(0)" class="product-title">Samsung TV
-                                            <span class="badge badge-warning float-right">$1800</span></a>
+                                        <a href="javascript:void(0)" class="product-title">Jakarta Barat
+                                            <span class="badge badge-warning float-right">Rp.1.800.000</span></a>
                                         <span class="product-description">
-                                            Samsung 32" 1080p 60Hz LED Smart HDTV.
+                                        Blanca Kost Bandengan selatan
                                         </span>
                                     </div>
                                 </li>
                                 <!-- item -->
                                 <li class="item">
                                     <div class="product-img">
-                                        <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                        <img src="<?php echo base_url() ?>assets/img/kost/jakbar2.jpg" alt="Product Image" class="img-size-50">
                                     </div>
                                     <div class="product-info">
-                                        <a href="javascript:void(0)" class="product-title">PlayStation 4
-                                            <span class="badge badge-success float-right">$399</span></a>
+                                        <a href="javascript:void(0)" class="product-title">Jakarta Barat
+                                            <span class="badge badge-success float-right">Rp.1.800.000</span></a>
                                         <span class="product-description">
-                                            PlayStation 4 500GB Console (PS4)
+                                            kost Exclusive Tanjung Duren Selatan
                                         </span>
                                     </div>
                                 </li>
@@ -177,7 +183,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">View All Products</a>
+                            <a href="<?= base_url('Kost'); ?>" class="uppercase">View All Products</a>
                         </div>
                         <!-- /.card-footer -->
                     </div>
@@ -189,7 +195,7 @@
                 <!-- TABLE: LATEST ORDERS -->
                 <div class="card">
                 <div class="card-header border-transparent">
-                    <h3 class="card-title">Latest Orders</h3>
+                    <h3 class="card-title">Buku Tamu</h3>
 
                     <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -213,54 +219,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                        <td>Call of Duty IV</td>
-                        <td><span class="badge badge-success">Shipped</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-warning">Pending</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>iPhone 6 Plus</td>
-                        <td><span class="badge badge-danger">Delivered</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-info">Processing</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-warning">Pending</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>iPhone 6 Plus</td>
-                        <td><span class="badge badge-danger">Delivered</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                        </td>
-                        </tr>
                         <tr>
                         <td><a href="pages/examples/invoice.html">OR9842</a></td>
                         <td>Call of Duty IV</td>
