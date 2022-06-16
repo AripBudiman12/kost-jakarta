@@ -1,9 +1,4 @@
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="<?= base_url('assets/img/bg.jpg'); ?>" alt="AdminLTELogo" height="60" width="60">
-    <h3>Kost-Jakarta</h3>
-  </div>
-
+  
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->

@@ -47,8 +47,8 @@ class Kost extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
+            $this->load->view('templates/sidebar', $data);
             $this->load->view('kost/index', $data);
             $this->load->view('templates/footer');
         } else {
@@ -116,8 +116,8 @@ class Kost extends CI_Controller
         $this->load->library('upload', $config);
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
+            $this->load->view('templates/sidebar', $data);
             $this->load->view('kost/ubah_kost', $data);
             $this->load->view('templates/footer');
         } else {
