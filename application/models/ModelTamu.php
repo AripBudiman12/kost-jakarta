@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class BukuTamu extends CI_Model
+class ModelTamu extends CI_Model
 {
     //manajemen buku
     public function getTamu()
     {
-        return $this->db->get('buku_tamu');
+        return $this->db->get('buku_tamu')->result_array();
     }
 
     public function tamuWhere($where)

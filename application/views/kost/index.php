@@ -16,6 +16,10 @@
 
     <section>
         <div class="card-body">
+            <div style="margin-top: -10px;">
+                <a href="<?= base_url('Kost') ?>" class="btn btn-primary" data-toggle="modal" 
+            data-target="#kostBaruModal">Tambah Kost</a>
+            </div><br>
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -54,3 +58,50 @@
         </div>
     </section>
 </div>
+
+<!-- Modal Tambah kost baru-->
+<div class="modal fade" id="kostBaruModal" tabindex="-1"
+    role="dialog" aria-labelledby="kostBaruModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"
+                    id="kostBaruModalLabel">Tambah Kost
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('Kost'); ?>" method="post"
+                enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="lokasi" name="lokasi"
+                        placeholder="Masukkan Lokasi">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="alamat" name="alamat" placeholder="Masukkan 
+                        Masukkan Alamat">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="subalamat" name="subalamat" placeholder="Masukkan 
+                        subalamat">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="harga" name="harga" placeholder="Masukkan Harga">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-control form-control-user" id="image" name="image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>
+                    <button type="submit" class="btn btn-primary"><i
+                        class="fas fa-plus-circle"></i> Tambah</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End of Modal Tambah Mneu -->

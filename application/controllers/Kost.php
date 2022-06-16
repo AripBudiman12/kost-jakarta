@@ -83,7 +83,7 @@ class Kost extends CI_Controller
     {
         $data['judul'] = 'Ubah Data Kost';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $data['data-kost'] = $this->ModelKost->kostWhere(['id' => $this->uri->segment(3)])->result_array();
+        $data['data_kost'] = $this->ModelKost->kostWhere(['id' => $this->uri->segment(3)])->result_array();
 
         $this->form_validation->set_rules('lokasi', 'Lokasi', 'required|min_length[3]',[
             'required' => 'Lokasi Harus Diisi',
@@ -118,7 +118,7 @@ class Kost extends CI_Controller
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
-            $this->load->view('kost/index', $data);
+            $this->load->view('kost/ubah_kost', $data);
             $this->load->view('templates/footer');
         } else {
             if ($this->upload->do_upload('image')) {

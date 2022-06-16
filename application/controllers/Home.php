@@ -56,7 +56,7 @@ class Home extends CI_Controller {
             'komentar'  =>  $komentar
         );
 
-        $this->home_model->input_data($data, 'buku_tamu');
-        redirect('home/index');
+        $this->ModelTamu->simpanTamu($data, 'buku_tamu');
+        redirect('Buku_Tamu');
     }
 }
