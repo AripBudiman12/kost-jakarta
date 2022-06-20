@@ -16,6 +16,7 @@ class Admin extends CI_Controller
         ->session->userdata('email')])->row_array();
         $data['anggota'] = $this->ModelUser->getUserLimit()->result_array();
         $data['kost'] = $this->ModelKost->getKost()->result_array();
+        $data['buku_tamu'] = $this->ModelTamu->getTamu();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);

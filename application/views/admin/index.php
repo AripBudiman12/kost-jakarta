@@ -97,8 +97,8 @@
                             <!-- /.card-header -->
                             <div class="card-body p-0">
                                 <ul class="users-list clearfix">
-                                    <li>
-                                        <img src="dist/img/user1-128x128.jpg" alt="User Image">
+                                    <li> <i class="fa fa-user-circle" aria-hidden="true" alt="User Image"></i>
+                                        <!-- <img src="dist/img/user1-128x128.jpg" alt="User Image"> -->
                                         <a class="users-list-name" href="#">Dwi Nurmala sari</a>
                                         <span class="users-list-date">14-06-2022</span>
                                     </li>
@@ -211,15 +211,26 @@
                     <div class="table-responsive">
                     <table class="table m-0">
                         <thead>
-                        <tr>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Penilaian</th>
-                        <th>Komentar</th>
-                        </tr>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">NAMA</th>
+                                <th scope="col">EMAIL</th>
+                                <th scope="col">PENILAIAN</th>
+                                <th scope="col">KOMENTAR</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        
+                            <?php
+                            $a = 1;
+                            foreach ($buku_tamu as $b) { ?>
+                                <tr>
+                                    <th scope="row"><?= $a++; ?></th>
+                                    <td><?= $b['nama']; ?></td>
+                                    <td><?= $b['email']; ?></td>
+                                    <td><?= $b['penilaian']; ?></td>
+                                    <td><?= $b['komentar']; ?></td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                     </div>
