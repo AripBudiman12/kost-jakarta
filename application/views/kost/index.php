@@ -23,7 +23,7 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>#</th>
                         <th>LOKASI</th>
                         <th>ALAMAT</th>
                         <th>SUB-ALAMAT</th>
@@ -33,9 +33,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $k = 1; foreach ($kost as $k) { ?>
+                    <?php $i = 1; foreach ($kost as $k) { ?>
                         <tr>
-                            <td><?= $k['id']; ?></td>
+                            <th scope="row"><?= $i++; ?></th>
                             <td><?= $k['lokasi']; ?></td>
                             <td><?= $k['alamat']; ?></td>
                             <td><?= $k['subalamat']; ?></td>
