@@ -38,5 +38,22 @@
     });
   });
 </script>
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="modal"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 6});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
 </body>
 </html>
