@@ -27,4 +27,17 @@ class Buku_Tamu extends CI_Controller {
         $this->load->view('buku_tamu', $data);
         $this->load->view('home/footer_h', $data);
     }
+
+    public function tamu()
+    {
+        $data['judul'] = 'Buku Tamu';
+        $data['buku_tamu'] = $this->ModelTamu->getTamu();
+        $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
+        
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('admin/tamu', $data);
+            $this->load->view('templates/footer');
+    }
 }

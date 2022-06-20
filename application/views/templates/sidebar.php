@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?= base_url('Buku_Tamu/tamu'); ?>" class="nav-link">
               <i class="nav-icon fas fa-address-book"></i>
               <p>
                 Buku Tamu
