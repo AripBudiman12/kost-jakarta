@@ -102,7 +102,6 @@
                             <div class="card-body p-0">
                                 <ul class="users-list clearfix">
                                     <?php
-                                    $i = 1;
                                     foreach ($anggota as $a) { ?>
                                         <li>
                                             <picture>
@@ -118,7 +117,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer text-center">
-                                <a href="javascript:">View All Users</a>
+                                <a href="<?= base_url('User/anggota'); ?>">View All Users</a>
                             </div>
                             <!-- /.card-footer -->
                         </div>  
@@ -145,8 +144,7 @@
                         <div class="card-body p-0">
                             <ul class="products-list product-list-in-card pl-2 pr-2">
                                 <?php
-                                $data['kost'] = $this->ModelKost->getKost()->result_array();
-                                for ($k=0; $k<5; $k++) { ?>
+                                foreach ($data_kost as $k) { ?>
                                     <!-- item -->
                                     <li class="item">
                                         <div class="product-img">
@@ -157,7 +155,7 @@
                                             </picture>
                                         </div>
                                         <div class="product-info">
-                                            <a href="javascript:void(0)" class="product-title"><?= $this->ModelKost->kostWhere(['lokasi'])->num_rows(); ?>
+                                            <a href="javascript:void(0)" class="product-title"><?= $k['lokasi']; ?>
                                                 <span class="badge badge-warning float-right"><?= $k['harga']; ?></span></a>
                                             <span class="product-description">
                                             <?= $k['subalamat']; ?>
@@ -224,7 +222,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
-                    <a href="javascript:void(0)" class="btn btn-sm btn-info float-right">View All Coment</a>
+                    <a href="<?= base_url('Buku_Tamu/tamu'); ?>" class="btn btn-sm btn-info float-right">View All Coment</a>
                 </div>
                 <!-- /.card-footer -->
                 </div>

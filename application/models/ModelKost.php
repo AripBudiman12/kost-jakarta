@@ -39,4 +39,13 @@ class ModelKost extends CI_Model
 
         return $this->db->get('data_kost')->result();
     }
+
+    //Widget
+    public function widget_kost(){
+        $this->db->select('*');
+        $this->db->from('data_kost');
+        $this->db->limit(4);
+        $query = $this->db->get();
+        return $query;
+    }
 }
