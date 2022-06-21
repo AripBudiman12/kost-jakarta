@@ -15,7 +15,7 @@ class Home extends CI_Controller {
         // load pagination
 		$this->load->library('pagination_bootstrap');
 		// load database
-		$this->db->limit(23);
+		// $this->db->limit(23);
 		$sql = $this->db->get('data_kost');
 
 		// set numbuer per page

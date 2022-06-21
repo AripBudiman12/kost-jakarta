@@ -29,7 +29,7 @@
                         <div class="info-box-content">
                             <span class="info-box-text">KOST</span>
                             <span class="info-box-number">
-                                35
+                                <?= $this->ModelKost->kostWhere(['id'])->num_rows(); ?>
                             </span>
                         </div>
                     <!-- /.info-box-content -->
@@ -58,7 +58,9 @@
                     <span class="info-box-icon bg-success elevation-1"><i class="fas fa-image"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">IMAGE</span>
-                        <span class="info-box-number">35</span>
+                        <span class="info-box-number">
+                            <?= $this->ModelKost->kostWhere(['id'])->num_rows(); ?>
+                        </span>
                     </div>
                     <!-- /.info-box-content -->
                     </div>
@@ -70,7 +72,9 @@
                         <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>        
                         <div class="info-box-content">
                             <span class="info-box-text">ADMIN</span>
-                            <span class="info-box-number">5</span>
+                            <span class="info-box-number">
+                                <?= $this->ModelUser->getUserWhere(['role_id' => 1])->num_rows(); ?>
+                            </span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -97,31 +101,18 @@
                             <!-- /.card-header -->
                             <div class="card-body p-0">
                                 <ul class="users-list clearfix">
-                                    <li> <i class="fa fa-user-circle" aria-hidden="true" alt="User Image"></i>
-                                        <!-- <img src="dist/img/user1-128x128.jpg" alt="User Image"> -->
-                                        <a class="users-list-name" href="#">Dwi Nurmala sari</a>
-                                        <span class="users-list-date">14-06-2022</span>
-                                    </li>
-                                    <li>
-                                        <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Muhammad Abizar</a>
-                                        <span class="users-list-date">14-06-2022</span>
-                                    </li>
-                                    <li>
-                                        <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Teguh Ramdhani</a>
-                                        <span class="users-list-date">14-06-2022</span>
-                                    </li>
-                                    <li>
-                                        <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Latifah Ningrum</a>
-                                        <span class="users-list-date">14-06-2022</span>
-                                    </li>
-                                    <li>
-                                        <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                        <a class="users-list-name" href="#">Arip Budiman</a>
-                                        <span class="users-list-date">14-06-2022</span>
-                                    </li>
+                                    <?php
+                                    $i = 1;
+                                    foreach ($anggota as $a) { ?>
+                                        <li>
+                                            <picture>
+                                            <source srcset="" type="image/svg+xml">
+                                            <img src="<?= base_url('assets/img/user/') . $a['image']; ?>" class="img-fluid img-thumbnail" alt="User Image" style="width:60px;height:80px;">
+                                        </picture>
+                                            <a class="users-list-name" href="#"><?= $a['nama']; ?></a>
+                                            <span class="users-list-date"><?= date('d F Y', $a['tanggal_input']); ?></span>
+                                        </li>
+                                    <?php } ?>
                                 </ul>
                                 <!-- /.users-list -->
                             </div>
@@ -153,32 +144,27 @@
                         
                         <div class="card-body p-0">
                             <ul class="products-list product-list-in-card pl-2 pr-2">
-                                <!-- item -->
-                                <li class="item">
-                                    <div class="product-img">
-                                        <img src="<?php echo base_url() ?>assets/img/kost/jakbar1.jpg" alt="Product Image" class="img-size-50">
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="javascript:void(0)" class="product-title">Jakarta Barat
-                                            <span class="badge badge-warning float-right">Rp.1.800.000</span></a>
-                                        <span class="product-description">
-                                        Blanca Kost Bandengan selatan
-                                        </span>
-                                    </div>
-                                </li>
-                                <!-- item -->
-                                <li class="item">
-                                    <div class="product-img">
-                                        <img src="<?php echo base_url() ?>assets/img/kost/jakbar2.jpg" alt="Product Image" class="img-size-50">
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="javascript:void(0)" class="product-title">Jakarta Barat
-                                            <span class="badge badge-success float-right">Rp.1.800.000</span></a>
-                                        <span class="product-description">
-                                            kost Exclusive Tanjung Duren Selatan
-                                        </span>
-                                    </div>
-                                </li>
+                                <?php
+                                $data['kost'] = $this->ModelKost->getKost()->result_array();
+                                for ($k=0; $k<5; $k++) { ?>
+                                    <!-- item -->
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <picture>
+                                                <source srcset="" type="image/svg+xml">
+                                                <img src="<?= base_url('assets/img/kost/') . $k['image'];?>" class="img-fluid 
+                                                img-thumbnail" alt="...">
+                                            </picture>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript:void(0)" class="product-title"><?= $this->ModelKost->kostWhere(['lokasi'])->num_rows(); ?>
+                                                <span class="badge badge-warning float-right"><?= $k['harga']; ?></span></a>
+                                            <span class="product-description">
+                                            <?= $k['subalamat']; ?>
+                                            </span>
+                                        </div>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <!-- /.card-body -->
