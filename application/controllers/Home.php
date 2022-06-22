@@ -20,9 +20,10 @@ class Home extends CI_Controller {
 
 		// set numbuer per page
 		$this->pagination_bootstrap->offset(6);
-
-        $data['kost'] = $this->ModelKost->getKost()->result_array();
-		$data['kost'] = $this->pagination_bootstrap->config("/Home/index", $sql);
+        
+        $data['modal'] = $this->ModelKost->kostWhere(['image' => $this->uri->segment(3)])->result_array();
+        
+        $data['pagination'] = $this->pagination_bootstrap->config("/Home/index", $sql);
         $data['judul'] = 'Home';
         // load view
         $this->load->view('Home/header_h', $data);
@@ -33,7 +34,9 @@ class Home extends CI_Controller {
     public function search_data(){
         $keyword = $this->input->post('yangdicari',true);
         
-        $data['kost'] = $this->ModelKost->get_search($keyword);
+        $data['modal'] = $this->ModelKost->kostWhere(['image' => $this->uri->segment(3)])->result_array();
+        
+        $data['search'] = $this->ModelKost->get_search($keyword);
         $data['judul'] = 'Search';
         //load view
         $this->load->view('Home/header_h', $data);

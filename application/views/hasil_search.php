@@ -14,7 +14,7 @@
             <?= form_close(); ?>
             <hr>
         <div class="row justify-content-center">
-                        <?php foreach ($kost as $k): ?>
+                        <?php foreach ($search as $k): ?>
                         
                             <div class="col-md-4">
                             
@@ -24,11 +24,11 @@
                                         data-target="#ekkoLightbox-336"></a>
                                     </div>
                                     <div class="card-body">
-                                    <p class="card-text"><b><?= $k->lokasi?></b></p>
-                                        <h5 class="card-title"><?= substr($k->alamat,0,23)?>...</h5>
-                                        <span class="card-font"><?= $k->harga?></span>
-                                        <p class="card-text"><?= substr($k->subalamat,0,30)?>... </p>
-                                        <a href="" class="btn btn-info btn-sm">lihat detail</a>
+                                        <p class="card-text"><?= $k-> lokasi; ?></p>
+                                        <h5 class="card-title"><?= substr($k-> alamat,0,23)?>...</h5><br>
+                                        <h5 class="card-font" style="color: green;"><?= $k->harga ?></h5>
+                                        <p class="card-text"><?= substr($k-> subalamat,0,30)?>...</p>
+                                        <a href="Autentifikasi" class="btn btn-primary">Lihat Detail</a>
                                     </div>
                                 </div>
                             </div> 
@@ -41,7 +41,7 @@
     style="display: blok; padding-right: 17px;">
     <div class="modal-dialog" role="document" style="display: block; flex: 1 1 1px; max-width: 500px;">
         <div class="modal-content">
-            <?php foreach ($kost as $k): ?>
+            <?php foreach ($modal as $k): ?>
                 <div class="modal-header">
                     <h4 class="modal-tittle"><?= $k-> lokasi; ?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
