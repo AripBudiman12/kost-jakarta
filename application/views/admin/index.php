@@ -102,7 +102,7 @@
                             <div class="card-body p-0">
                                 <ul class="users-list clearfix">
                                     <?php
-                                    foreach ($anggota as $a) { ?>
+                                    foreach ($data_user as $a) { ?>
                                         <li>
                                             <picture>
                                             <source srcset="" type="image/svg+xml">

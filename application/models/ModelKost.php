@@ -48,4 +48,12 @@ class ModelKost extends CI_Model
         $query = $this->db->get();
         return $query;
     }
+
+    public function detail_kost(){
+        $this->db->select('*');
+        $this->db->from('data_kost');
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query;
+    }
 }

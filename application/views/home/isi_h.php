@@ -85,7 +85,7 @@
                             <h5 class="card-title"><?= substr($k-> alamat,0,23)?>...</h5><br>
                             <h5 class="card-font" style="color: green;"><?= $k->harga ?></h5>
                             <p class="card-text"><?= substr($k-> subalamat,0,30)?>...</p>
-                            <a href="<?= base_url('home/detail'); ?>" class="btn btn-primary">Lihat Detail</a>
+                            <a href="<?= base_url('home/detail/').$k->id; ?>" class="btn btn-primary">Lihat Detail</a>
                         </div>
                     </div>
                 </div>

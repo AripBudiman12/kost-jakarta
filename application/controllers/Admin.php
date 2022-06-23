@@ -18,6 +18,7 @@ class Admin extends CI_Controller
         $data['kost'] = $this->ModelKost->getKost()->result_array();
         $data['buku_tamu'] = $this->ModelTamu->getTamu();
         $data['data_kost'] = $this->ModelKost->widget_kost()->result_array();
+        $data['data_user'] = $this->ModelUser->widget_user()->result_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);

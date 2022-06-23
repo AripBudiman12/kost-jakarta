@@ -62,7 +62,7 @@ class Home extends CI_Controller {
     public function detail() {
         
         $data['judul'] = 'Detail';
-        $data['kost'] = $this->ModelKost->kostWhere('id')->row_array();
+        $data['kost'] = $this->ModelKost->kostWhere(['id' => $this->uri->segment(3)])->result_array();
 
         $this->load->view('Home/header_h', $data);
         $this->load->view('detail', $data);

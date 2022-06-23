@@ -33,4 +33,13 @@ class ModelUser extends CI_Model
         $this->db->limit(10, 0);
         return $this->db->get();
     }
+
+    //Widget
+    public function widget_user(){
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->limit(8);
+        $query = $this->db->get();
+        return $query;
+    }
 }

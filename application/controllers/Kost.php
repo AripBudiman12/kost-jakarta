@@ -105,9 +105,9 @@ class Kost extends CI_Controller
 
         //konfogurasi sebelum gambar diupload
 
-        $config['upload_path'] = './assets/img/kost';
+        $config['upload_path'] = './assets/img/kost/';
         $config['allowed_types'] = 'jpg|png|jpeg';
-        $config['max_size'] = '3000';
+        $config['max_size'] = '30000';
         $config['max_width'] = '1024';
         $config['max_height'] = '1000';
         $config['file_name'] = 'img' . time();
