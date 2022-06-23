@@ -21,8 +21,6 @@ class Home extends CI_Controller {
 		// set numbuer per page
 		$this->pagination_bootstrap->offset(6);
         
-        $data['modal'] = $this->ModelKost->kostWhere(['image' => $this->uri->segment(3)])->result_array();
-        
         $data['pagination'] = $this->pagination_bootstrap->config("/Home/index", $sql);
         $data['judul'] = 'Home';
         // load view
@@ -33,9 +31,7 @@ class Home extends CI_Controller {
 
     public function search_data(){
         $keyword = $this->input->post('yangdicari',true);
-        
-        $data['modal'] = $this->ModelKost->kostWhere(['image' => $this->uri->segment(3)])->result_array();
-        
+           
         $data['search'] = $this->ModelKost->get_search($keyword);
         $data['judul'] = 'Search';
         //load view
@@ -61,5 +57,15 @@ class Home extends CI_Controller {
 
         $this->ModelTamu->simpanTamu($data, 'buku_tamu');
         redirect('Buku_Tamu');
+    }
+
+    public function detail() {
+        
+        $data['judul'] = 'Detail';
+        $data['kost'] = $this->ModelKost->kostWhere('id')->row_array();
+
+        $this->load->view('Home/header_h', $data);
+        $this->load->view('detail', $data);
+        $this->load->view('Home/footer_h', $data);
     }
 }

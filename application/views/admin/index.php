@@ -150,7 +150,7 @@
                                         <div class="product-img">
                                             <picture>
                                                 <source srcset="" type="image/svg+xml">
-                                                <img src="<?= base_url('assets/img/kost/') . $k['image'];?>" class="img-fluid 
+                                                <img src="<?= base_url('assets/img/kost/') . $k['lokasi'] .'/'. $k['image'];?>" class="img-fluid 
                                                 img-thumbnail" alt="...">
                                             </picture>
                                         </div>

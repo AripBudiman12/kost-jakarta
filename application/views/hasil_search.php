@@ -32,30 +32,28 @@
                                     </div>
                                 </div>
                             </div> 
+
+                            <!-- Image Modal -->
+                            <div id="ekkoLightbox-336" class="ekko-lightbox modal fade in show" tabindex="-1" role="dialog" arial-modal="true" 
+                                style="display: blok; padding-right: 17px;">
+                                <div class="modal-dialog" role="document" style="display: block; flex: 1 1 1px; max-width: 500px;">
+                                    <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-tittle"><?= $k-> lokasi; ?></h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">x</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="ekko-lightbox-container" style="height: 100%;">
+                                                    <div class="ekko-lightbox-item fade in show">
+                                                        <img src="<?= base_url('assets/img/kost/') . $k->image ?>" class="card-img-top" style="width: 100%;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
                         <?php endforeach; ?>
         </div>
-</div>
-
-<!-- Image Modal -->
-<div id="ekkoLightbox-336" class="ekko-lightbox modal fade in show" tabindex="-1" role="dialog" arial-modal="true" 
-    style="display: blok; padding-right: 17px;">
-    <div class="modal-dialog" role="document" style="display: block; flex: 1 1 1px; max-width: 500px;">
-        <div class="modal-content">
-            <?php foreach ($modal as $k): ?>
-                <div class="modal-header">
-                    <h4 class="modal-tittle"><?= $k-> lokasi; ?></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="ekko-lightbox-container" style="height: 100%;">
-                        <div class="ekko-lightbox-item fade in show">
-                            <img src="<?= base_url('assets/img/kost/') . $k->image ?>" class="card-img-top" style="width: 100%;">
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
 </div>

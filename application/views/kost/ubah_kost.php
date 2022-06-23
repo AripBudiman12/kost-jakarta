@@ -43,7 +43,7 @@
                                 <?php
                                 if (isset($k['image'])) { ?>
 
-                                    <input type="hidden" name="old_pict" id="old_pict" value="<?= $k['image']; ?>">
+                                    <input type="hidden" name="old_pict" id="old_pict" value="<?php echo $k['image']; ?>">
 
                                     <picture>
                                         <source srcset="" type="image/svg+xml">
