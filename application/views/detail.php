@@ -20,7 +20,6 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12 col-sm-6">
-                                <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
                                 <div class="col-12">
                                 <img src="<?= base_url('assets/img/kost/') . $k['image']; ?>" class="product-image" alt="Product Image">
                                 </div>
@@ -62,6 +61,7 @@
                                 <a href="#" class="text-gray">
                                 <i class="fas fa-rss-square fa-2x"></i>
                                 </a>
+                                <img src="<?= base_url('assets/img/whatsapp.png');?>" style="width: 60px;"><?= $k['hp']; ?>
                             </div>
                         </div>
                     </div>
