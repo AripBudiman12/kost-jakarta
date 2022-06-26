@@ -55,6 +55,9 @@
                                 <input type="file" class="form-control form-control-user" id="image" name="image">
                             </div>
                             <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="hp" name="hp" placeholder="Masukkan No Telepon" value="<?= $k['hp']; ?>">
+                            </div>
+                            <div class="form-group">
                                 <input type="button" class="form-control form-control-user btn btn-dark col-lg-3 mt-3" value="Kembali" onclick="window.history.go(-1)">
                                 <input type="submit" class="form-control form-control-user btn btn-primary col-lg-3 mt-3" value="Update">
                             </div>

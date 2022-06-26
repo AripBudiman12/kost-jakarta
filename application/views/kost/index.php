@@ -29,6 +29,7 @@
                         <th>SUB-ALAMAT</th>
                         <th>HARGA</th>
                         <th>IMAGE</th>
+                        <th>NO TELEPON</th>
                         <th>ACTION</th>
                     </tr>
                 </thead>
@@ -47,6 +48,7 @@
                                 base_url('assets/img/kost/') . $k['image'];?>" class="img-fluid 
                                 img-thumbnail" alt="...">
                             </picture></td>
+                            <td><?= $k['hp']; ?></td>
                             <td>
                              <a href="<?= base_url('kost/ubahkost/') . $k['id']; ?>" onclick="return confirm('Kamu yakin akan mengubah <?= $k['alamat']; ?> ?');" class="badge badge-info"><i class="fas fa-edit"></i>Ubah</a>
                                 <a href="<?= base_url('kost/hapuskost/') . $k['id']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $k['alamat']; ?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i>Hapus</a>
@@ -92,6 +94,9 @@
                     </div>
                     <div class="form-group">
                         <input type="file" class="form-control form-control-user" id="image" name="image">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="hp" name="hp" placeholder="Masukkan NO Telepon">
                     </div>
                 </div>
                 <div class="modal-footer">

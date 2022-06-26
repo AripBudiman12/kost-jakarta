@@ -71,9 +71,9 @@
                     <div class="info-box mb-3">
                         <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>        
                         <div class="info-box-content">
-                            <span class="info-box-text">ADMIN</span>
+                            <span class="info-box-text">USER</span>
                             <span class="info-box-number">
-                                <?= $this->ModelUser->getUserWhere(['role_id' => 1])->num_rows(); ?>
+                                <?= $this->ModelUser->getUserWhere()->num_rows(); ?>
                             </span>
                         </div>
                         <!-- /.info-box-content -->
@@ -150,7 +150,7 @@
                                         <div class="product-img">
                                             <picture>
                                                 <source srcset="" type="image/svg+xml">
-                                                <img src="<?= base_url('assets/img/kost/') . $k['lokasi'] .'/'. $k['image'];?>" class="img-fluid 
+                                                <img src="<?= base_url('assets/img/kost/') .  $k['image'];?>" class="img-fluid 
                                                 img-thumbnail" alt="...">
                                             </picture>
                                         </div>

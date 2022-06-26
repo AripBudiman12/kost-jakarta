@@ -33,6 +33,11 @@ class Kost extends CI_Controller
             'min_length' => 'Harga Terlalu Pendek',
             'numeric' => 'Yang anda masukkan bukan angka'
         ]);
+        $this->form_validation->set_rules('hp', 'Hp', 'required|min_length[3]numeric',[
+            'required' => 'No.HP harus diisi',
+            'min_length' => 'No.HP Terlalu Pendek',
+            'numeric' => 'Yang anda masukkan bukan angka'
+        ]);
 
         //konfogurasi sebelum gambar diupload
 
@@ -64,7 +69,8 @@ class Kost extends CI_Controller
                 'alamat' => $this->input->post('alamat', true),
                 'subalamat' => $this->input->post('subalamat', true),
                 'harga' => $this->input->post('harga', true),
-                'image' => $gambar
+                'image' => $gambar,
+                'hp' => $this->input->post('hp', true),
             ];
 
             $this->ModelKost->simpanKost($data);
@@ -97,9 +103,9 @@ class Kost extends CI_Controller
             'required' => 'SubAlamat Harus diisi',
             'min_length' => 'SubAlamat Terlalu Pendek'
         ]);
-        $this->form_validation->set_rules('harga', 'Harga', 'required|min_length[3]numeric',[
-            'required' => 'Harga harus diisi',
-            'min_length' => 'Harga Terlalu Pendek',
+        $this->form_validation->set_rules('hp', 'Hp', 'required|min_length[3]numeric',[
+            'required' => 'No.HP harus diisi',
+            'min_length' => 'No.HP Terlalu Pendek',
             'numeric' => 'Yang anda masukkan bukan angka'
         ]);
 
@@ -133,7 +139,8 @@ class Kost extends CI_Controller
                 'alamat' => $this->input->post('alamat', true),
                 'subalamat' => $this->input->post('subalamat', true),
                 'harga' => $this->input->post('harga', true),
-                'image' => $gambar
+                'image' => $gambar,
+                'hp' => $this->input->post('hp', true),
             ];
 
             $this->ModelKost->updateKost($data, ['id' => $this->input->post('id')]);

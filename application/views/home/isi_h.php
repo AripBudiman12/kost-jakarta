@@ -105,7 +105,7 @@
                                 <div class="modal-body">
                                     <div class="ekko-lightbox-container" style="height: 100%;">
                                         <div class="ekko-lightbox-item fade in show">
-                                            <img src="<?= base_url('assets/img/kost/') . $k->lokasi .'/'. $k->image ?>" class="card-img-top" style="width: 100%;">
+                                            <img src="<?= base_url('assets/img/kost/') . $k->image ?>" class="card-img-top" style="width: 100%;">
                                         </div>
                                     </div>
                                 </div>
