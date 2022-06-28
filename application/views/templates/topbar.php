@@ -1,7 +1,5 @@
-  
-  <!-- Navbar -->
+  <!-- Top Bar -->
   <nav class="main-header navbar navbar-expand navbar-dark">
-    <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
@@ -11,19 +9,15 @@
       </li>
     </ul>
 
-    <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <!-- Sidebar user panel (optional) -->
             <ul class="image">
               <li style="list-style:none;"><span href="#" class="d-block-link active"><?= $user['user_name'] ?></span>
               <img src="<?= base_url ('assets/img/user/') . $user['image']; ?>" class="brand-image elevation-3" width="60" height="35"></li>
             </ul>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg">
-          <!-- User Image -->
           <center>
           <li class="user-header">
             <br>
@@ -49,4 +43,3 @@
       </li>
    </ul>
   </nav>
-  <!-- /.navbar -->

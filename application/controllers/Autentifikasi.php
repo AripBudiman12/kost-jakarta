@@ -53,7 +53,7 @@ class Autentifikasi extends CI_Controller
                     redirect('admin');
                 } else {
                     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Password salah!!!</div>');
-                    redirect('home');
+                    redirect('autentifikasi');
                 }
             } else {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">User Belum diaktifasi!!!</div>');
@@ -111,7 +111,7 @@ class Autentifikasi extends CI_Controller
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'role_id' => 2,
-                'is_active' => 1,
+                'is_active' => 0,
                 'tanggal_input' => time()
             ];
 
