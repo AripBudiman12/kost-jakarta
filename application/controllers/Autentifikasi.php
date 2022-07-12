@@ -92,8 +92,12 @@ class Autentifikasi extends CI_Controller
         // bahasa sendiri yaitu jika password dan repeat password tidak diinput sama, maka pesannya
         // 'Password Tidak Sama'. jika password diisi kurang dari 3 digit, maka pesannya adalah
         // 'Password Terlalu Pendek'
-        $this->form_validation->set_rules('password1', 'Password', 
-        'required', 'required|trim|matches[password1]');
+        $this->form_validation->set_rules('password1', 'Password1', 'required|trim|matches[password2]',[
+            'matches' => 'Password tidak sama'
+        ]);
+        $this->form_validation->set_rules('password2', 'Password2', 'required|trim|matches[password1]',[
+            'matches' => 'Password tidak sama'
+        ]);
         // jika disubmit kemudian validasi form diatas tidak berjalan maka akan tetap berada di
         // tampilan registrasi. tapi jika disubmit kemudian validasi form diatas berjalan, maka data yang
         // diinputkan akan disimpan ke dalam tabel user
@@ -130,7 +134,7 @@ class Autentifikasi extends CI_Controller
         $config = [
             'protocol' => 'smtp',
             'smtp_host' => 'smtp.googlemail.com',
-            'smtm_user' => 'cadangcadang55@gmail.com',
+            'smtp_user' => 'cadangcadang55@gmail.com',
             'smtp_pass' => 'crrmlgwnsmbdcdis',
             'smtp_crypto' => 'ssl',
             'smtp_port' => 465,
@@ -142,7 +146,7 @@ class Autentifikasi extends CI_Controller
         $this->load->library('email', $config);
 
         $this->email->from('cadangcadang55@gmail.com', 'AripBudiman');
-        $this->email->to('arip80228@gmail.com');
+        $this->email->to($this->input->post('email'));
         $this->email->subject('Testing');
         $this->email->message('Hello world');
 

@@ -22,6 +22,7 @@
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Full name" id="nama" 
                   name="nama" value="<?= set_value('nama'); ?>" required>
+                  <?= form_error('nama', '<small class="text-danger">','</smalll>'); ?>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-user"></span>
@@ -32,6 +33,7 @@
                 <div class="input-group mb-3">
                   <input type="email" class="form-control" placeholder="Email" id="email" 
                   name="email" value="<?= set_value('email') ?>" required>
+                  <?= form_error('email', '<small class="text-danger">','</smalll>'); ?>
                     <div class="input-group-append">
                         <div class="input-group-text">
                           <span class="fas fa-envelope"></span>
@@ -42,6 +44,7 @@
                 <div class="input-group mb-3">
                   <input type="password" class="form-control" placeholder="Password" id="password1" 
                   name="password1" required>
+                  <?= form_error('password1', '<small class="text-danger">','</smalll>'); ?>
                     <div class="input-group-append">
                         <div class="input-group-text">
                           <span class="fas fa-lock"></span>
