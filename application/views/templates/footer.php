@@ -1,6 +1,6 @@
 <!-- Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2022 <a href="<?= base_url('Admin'); ?>">Kost Jakarta</a>.</strong>
+    <strong>Copyright &copy; 2022 <a href="<?= base_url('Admin'); ?>">Kost Jakarta</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.1.0

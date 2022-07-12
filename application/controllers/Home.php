@@ -68,4 +68,13 @@ class Home extends CI_Controller {
         $this->load->view('detail', $data);
         $this->load->view('Home/footer_h', $data);
     }
+
+    public function about() {
+        
+        $data['judul'] = 'About';
+
+        $this->load->view('Home/header_h', $data);
+        $this->load->view('about', $data);
+        $this->load->view('Home/footer_h', $data);
+    }
 }

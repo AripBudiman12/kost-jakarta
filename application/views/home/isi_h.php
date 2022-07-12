@@ -1,16 +1,16 @@
 <!-- navbar -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">      
         <span class="navbar-brand">KOST-JAKARTA</span>
             
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fas fa-bars" style="color:orange"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-lg-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+                        <a class="nav-link" href="<?= base_url('Home/About'); ?>">About <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url('Buku_Tamu'); ?>">Buku-Tamu</a>
@@ -27,7 +27,7 @@
 <div class="jumbotron">
     <div class="container">
         <div class="jb">
-        <div id="carouselExampleInterval" class="carousel slide mx-auto" data-ride="carousel" >
+            <div id="carouselExampleInterval" class="carousel slide mx-auto" data-ride="carousel" >
                   <div class="carousel-inner" >
                       <div class="carousel-item active" >
                       <img src="<?php echo base_url() ?>assets/img/iklan/iklan.jpg" class="d-block w-100" alt="...">
@@ -76,7 +76,7 @@
             <?php foreach ($pagination as $k): ?>
                 <div class="col-md-4">
                     <div class="card shadow mb-5">
-                        <div class="inner mx-auto">
+                        <div class="inner mx-auto"><br>
                             <a href=""><img src="<?= base_url('assets/img/kost/'). $k->image ?>" class="card-img-top" data-toggle="modal" 
                             data-target="#imgmodal-<?= $k-> id; ?>"></a>
                         </div>

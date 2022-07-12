@@ -12,6 +12,7 @@
     }
   </style>
 
+  <link rel="stylesheet" href="<?= base_url('assets/lte/'); ?>plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="<?= base_url('assets/lte/'); ?>plugins/fontawesome-free/css/all.min.css">

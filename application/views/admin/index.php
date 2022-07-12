@@ -9,7 +9,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?= base_url('Home'); ?>">Home</a></li>
               <li class="breadcrumb-item active"><?= $judul; ?></li>
             </ol>
           </div><!-- /.col -->
@@ -191,9 +191,9 @@
                     </div>
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body p-0">
+                <div class="card-body">
                     <div class="table-responsive">
-                    <table class="table m-0">
+                    <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>

@@ -115,11 +115,42 @@ class Autentifikasi extends CI_Controller
                 'tanggal_input' => time()
             ];
 
-            $this->ModelUser->simpanData($data); //menggunakan model
+            // $this->ModelUser->simpanData($data); //menggunakan model
+
+            $this->_sendEmail();
             
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Selamat!! 
             akun member anda sudah dibuat. silahkan aktivasi akun anda</div>');
             redirect('autentifikasi');
+        }
+    }
+
+    private function _sendEmail() 
+    {
+        $config = [
+            'protocol' => 'smtp',
+            'smtp_host' => 'smtp.googlemail.com',
+            'smtm_user' => 'cadangcadang55@gmail.com',
+            'smtp_pass' => 'crrmlgwnsmbdcdis',
+            'smtp_crypto' => 'ssl',
+            'smtp_port' => 465,
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'newline' => "\r\n",
+        ];
+
+        $this->load->library('email', $config);
+
+        $this->email->from('cadangcadang55@gmail.com', 'AripBudiman');
+        $this->email->to('arip80228@gmail.com');
+        $this->email->subject('Testing');
+        $this->email->message('Hello world');
+
+        if($this->email->send()) {
+            return true;
+        } else {
+            echo $this->email->print_debugger();
+            die;
         }
     }
 
