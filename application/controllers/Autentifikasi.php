@@ -119,9 +119,18 @@ class Autentifikasi extends CI_Controller
                 'tanggal_input' => time()
             ];
 
-            // $this->ModelUser->simpanData($data); //menggunakan model
+            //siapkan token
+            $token = base64_encode(random_bytes(32));
+            $user_token = [
+                'email' => $email,
+                'token' => $token,
+                'date_created' => time()
+            ];
 
-            $this->_sendEmail();
+            $this->ModelUser->simpanData($data); //simpan model
+            $this->ModelUser->simpanDataToken($user_token); //token
+
+            $this->_sendEmail($token, 'verify');
             
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Selamat!! 
             akun member anda sudah dibuat. silahkan aktivasi akun anda</div>');
@@ -129,7 +138,7 @@ class Autentifikasi extends CI_Controller
         }
     }
 
-    private function _sendEmail() 
+    private function _sendEmail($token, $type) 
     {
         $config = [
             'protocol' => 'smtp',
@@ -147,14 +156,61 @@ class Autentifikasi extends CI_Controller
 
         $this->email->from('cadangcadang55@gmail.com', 'AripBudiman');
         $this->email->to($this->input->post('email'));
-        $this->email->subject('Testing');
-        $this->email->message('Hello world');
+
+        if ($type == 'verify') {
+
+            $this->email->subject('Account Verification');
+            $this->email->message('Click this link to verify you account : 
+                <a href="'. base_url() . 'Autentifikasi/verify?email=' . $this->input->post('email')  .  '&token=' . urlencode($token) . '">Activate</a>');
+        }
 
         if($this->email->send()) {
             return true;
         } else {
             echo $this->email->print_debugger();
             die;
+        }
+    }
+
+    public function verify()
+    {
+        $email = $this->input->get('email');
+        $token = $this->input->get('token');
+
+        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+
+        if ($user) {
+            $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
+
+            if ($user_token) {
+
+                if (time() - $user_token['date_created'] < (60 * 60 * 24)) {
+                    
+                    $this->db->set('is_active', 1);
+                    $this->db->where('email', $email);
+                    $this->db->update('user');
+
+                    $this->db->delete('user_token', ['email' => $email]);
+
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">'. $email .' has been activated! Please login.</div>');
+                        redirect('autentifikasi');
+                } else {
+
+                    $this->db->delete('user', ['email' => $email]);
+                    $this->db->delete('user_token', ['email' => $email]);
+
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Account activation failed! Token Expired.</div>');
+                        redirect('autentifikasi');
+                }
+
+            } else {
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Account activation failed! Wrong token.</div>');
+                    redirect('autentifikasi');
+            }
+
+        } else {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Account activation failed! Wrong email.</div>');
+            redirect('autentifikasi');
         }
     }
 
